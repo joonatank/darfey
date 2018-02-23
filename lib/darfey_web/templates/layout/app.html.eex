@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Joonatan Kuosa">
+
+    <title>Not you again</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <div>
+   <header class="navbar">
+       <!-- <nav role="navigation">
+       <ul class="nav nav-pills pull-right">-->
+       <a class="navlink" href="/">Home</a>
+       <a class="navlink" href="blog">Blog</a>
+       <a class="navlink" href="media">Media</a>
+       <a class="navlink" href="hello">Hello</a>
+       <a class="navlink" href="sql">SQL</a>
+       <a class="navlink" href="contact">Contact</a>
+       <!--</nav>
+       <span class="logo"></span>
+       -->
+   </header> <!-- navbar -->
+   <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+   <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+   <!-- inject the actual page here -->
+   <main role="main">
+     <%= render @view_module, @view_template, assigns %>
+   </main>
+
+   <!-- Footer (contact info)-->
+   <header class="contactbar">
+      <!-- TODO needs a phone number, email, some links -->
+      <a class="navlink" href="mailto:joonatan.kuosa@gmail.com">joonatan.kuosa@gmail.com</a>
+      <a class="navlink" target="_blank" href="http://github.com">GitHub</a>
+      <a class="navlink" rel="nofollow" target="_blank" href="https://hexdocs.pm/phoenix">Docs</a>
+      <a class="navlink" rel="nofollow" target="_blank" href="https://github.com/phoenixframework/phoenix">Source</a>
+      <a class="power" rel="nofollow" target="_blank" href="https://elixir-lang.org/">and Elixir</a>
+      <a class="power" rel="nofollow" target="_blank" href="http://phoenixframework.org/">Powered by Phoenix</a>
+   </header> <!-- contactbar -->
+  </div> <!-- main div -->
+
+  <body>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+
+</html>
