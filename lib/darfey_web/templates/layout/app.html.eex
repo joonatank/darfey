@@ -18,7 +18,6 @@
        <a class="navlink" href="/">Home</a>
        <a class="navlink" href="blog">Blog</a>
        <a class="navlink" href="media">Media</a>
-       <a class="navlink" href="hello">Hello</a>
        <a class="navlink" href="sql">SQL</a>
        <a class="navlink" href="contact">Contact</a>
        <!--</nav>
@@ -37,7 +36,8 @@
    <header class="contactbar">
       <!-- TODO needs a phone number, email, some links -->
       <a class="navlink" href="mailto:joonatan.kuosa@gmail.com">joonatan.kuosa@gmail.com</a>
-      <a class="navlink" target="_blank" href="http://github.com">GitHub</a>
+      <a class="navlink" target="_blank" href="http://github.com/joonatank">GitHub</a>
+      <!-- TODO replace these two with FB, LinkedIn links -->
       <a class="navlink" rel="nofollow" target="_blank" href="https://hexdocs.pm/phoenix">Docs</a>
       <a class="navlink" rel="nofollow" target="_blank" href="https://github.com/phoenixframework/phoenix">Source</a>
       <a class="power" rel="nofollow" target="_blank" href="https://elixir-lang.org/">and Elixir</a>

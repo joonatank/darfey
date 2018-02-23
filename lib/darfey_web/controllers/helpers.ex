@@ -43,17 +43,5 @@ defmodule DarfeyWeb.Controllers.Helpers do
       end
    end
 
-   def get_cube_table() do
-      query = """
-         select id, location, model, state
-         from cube_table
-      """
-
-      res = Ecto.Adapters.SQL.query!(Darfey.Repo, query)
-      cols = Enum.map res.columns, &(String.to_atom(&1))
-      Enum.map res.rows, fn(row) ->
-         struct(DarfeyWeb.CubeElem, Enum.zip(cols, row))
-      end
-   end
 end
 
