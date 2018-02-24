@@ -1,5 +1,11 @@
 # Darfey
 
+Personal Elixir + Phoenix playground.
+
+
+## How to use
+Straight up from mix bootstrap
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
@@ -9,10 +15,9 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+## Phoenix links
 
-## Learn more
-
+  * [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
   * Official website: http://www.phoenixframework.org/
   * Guides: http://phoenixframework.org/docs/overview
   * Docs: https://hexdocs.pm/phoenix

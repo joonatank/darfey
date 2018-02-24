@@ -53,6 +53,6 @@ config :darfey, Darfey.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "hello_dev",
+  database: "darfey",
   hostname: "localhost",
   pool_size: 10

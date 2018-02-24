@@ -132,7 +132,7 @@ a.navlink:hover {
    user-select: none;
 }
 
-.img-thumbnail, .video-thumbnail {
+.img-thumbnail {
    /* This is bad since it screws with the aspect ratio
     * The best would be to have maximum size and pick the larger side
     * use that to calculate percentage and scale by percentage

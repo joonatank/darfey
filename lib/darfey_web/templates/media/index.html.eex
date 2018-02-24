@@ -1,19 +1,10 @@
 <div class="jumbotron">
    <div class="unselectable">
    <h2>MEDIA</h2>
-   <%= for img <- get_images() do %>
+   <!-- WARNING: These functions need to return lists (otherwise it's an error) -->
+   <%= for image <- get_images() do %>
       <!-- Invalid html because of custom full attribute -->
-      <<%= img.type %> id=<%=img.file%> class="img-thumbnail" full=<%= "/images/" <> img.file %> src=<%= "/images/" <> img.thumb %> alt="Problem">
-   <% end %>
-   <%= for img <- get_videos() do %>
-      <!-- TODO these should be thumbnails as in images. -->
-      <img id=<%=img.file%> class="video-thumbnail" full=<%= "/images/" <> img.file %> src=<%= "/images/" <> img.thumb %> alt="Problem">
-      <!--
-      <video width=768 height=432 class="video-thumbnail">
-         <source src=<%= "/images/" <> img.file %> >
-         Your browser doesn't support video tags.
-      </video>
-      -->
+      <img id=<%=image.file%> class="img-thumbnail" type=<%=image.type%> full=<%= "/images/" <> image.file %> src=<%= "/images/" <> image.thumb %> alt="Problem">
    <% end %>
 
    <!-- Modal -->
@@ -26,8 +17,8 @@
    <!-- Modal video -->
    <div id="videoModal" class="modal">
       <span class="close">&times;</span>
-      <video width=768 height=432 class="modal-content" id="vid01">
-         <source src="images/test_video.mp4" id="vid01src">
+      <video width=768 height=432 class="modal-content" id="vid01" controls>
+         <source id="vid01src" src="">
       </video>
       <div id=caption></div>
    </div>

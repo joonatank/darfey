@@ -18,17 +18,17 @@ export var Modal = {
             vidModal.style.display = "none";
             modalVid.pause();
          }
-         else if (elem.className == "img-thumbnail") {
+         else if (elem.getAttribute('type') == "img") {
             modal.style.display = "block";
             modalImg.src = elem.getAttribute('full');
             captionText.innerHTML = elem.alt;
          }
-         else if (elem.className == "video-thumbnail") {
+         else if (elem.getAttribute('type') == "video") {
             vidModal.style.display = "block";
-            modalVidSrc.src = elem.getAttribute('full');
-            //modalVid.src = elem.src;
-            //modalImg.src = elem.getAttribute('full');
+            modalVidSrc.setAttribute('src', elem.getAttribute('full'));
             captionText.innerHTML = elem.alt;
+            // Need to load in order to change the source
+            modalVid.load();
             modalVid.play();
          }
       }
