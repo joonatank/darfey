@@ -1,18 +1,15 @@
-<h2>Show post</h2>
+<div class="blog">
+  <h2>Show post</h2>
 
-<ul>
-
-  <li>
-    <strong>Title:</strong>
+  <h3>
     <%= @post.title %>
-  </li>
+  </h3>
 
-  <li>
-    <strong>Body:</strong>
-    <%= @post.body %>
-  </li>
+  <p>
+    <strong>Body:</strong><br>
+    <%= raw(@post.body) %>
+  </p>
 
-</ul>
-
-<span><%= link "Edit", to: post_path(@conn, :edit, @post) %></span>
-<span><%= link "Back", to: post_path(@conn, :index) %></span>
+  <span><%= link "Edit", to: post_path(@conn, :edit, @post) %></span>
+  <span><%= link "Back", to: post_path(@conn, :index) %></span>
+</div>  <!-- jumbotron -->

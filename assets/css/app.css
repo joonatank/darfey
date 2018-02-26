@@ -22,6 +22,40 @@ th, td {
    padding-left: 25px;
 }
 
+.blog {
+   text-align: left;
+   padding-top : 20px;
+   padding-left: 20px;
+}
+
+.blog h2 {
+   text-align: left;
+   color: green;
+   padding-left: 50px;
+}
+
+.media {
+   text-align: center;
+   padding-top : 50px;
+   padding-left: 50px;
+}
+
+.media figure {
+    height: 255px;
+    width: 255px;
+    display: inline;
+    float: left;
+    padding: 0px;
+    margin: 5px;
+}
+
+img {
+    padding: 0px;
+    margin: 0px;
+    border: 2px;
+    /* float: left; */
+}
+
 .jumbotron {
    width: 100%;
    /* This is problematic, we need max-height to get the scrollbar working
