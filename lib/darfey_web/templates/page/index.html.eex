@@ -1,15 +1,15 @@
 <div class="jumbotron">
-   <h2><%= gettext "Welcome to %{name}!", name: "IMMERSIVE AR playground" %></h2>
-   <p>Daily random quote:</p>
-   <%= for quote <- get_random_quote() do %>
-      <p class="quote"><%= quote.quote %></p>
-      <p class="author"><%= quote.author%></p>
-   <% end %>
-   <p>
-   There should be some intelligent text here<br>
-   If for no other reason than to make me appear more intelligent than I'm<br>
-   Monkeys like bananas.<br>
-   Intelligent enough?
-   </p>
+  <h2><%= gettext "Welcome to %{name}!", name: "MY playground" %></h2>
+  <p>Daily random quote:</p>
+  <%= for quote <- get_random_quote() do %>
+    <p class="quote"><%= quote.quote %></p>
+    <p class="author"><%= quote.author%></p>
+  <% end %>
+  <p>
+  There should be some intelligent text here<br>
+  If for no other reason than to make me appear more intelligent than I'm<br>
+  Monkeys like bananas.<br>
+  Intelligent enough?
+  </p>
 </div>
 

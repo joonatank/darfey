@@ -1,33 +1,32 @@
 <div class="media">
-   <div class="unselectable">
-   <h2>MEDIA</h2>
-   <!-- WARNING: These functions need to return lists (otherwise it's an error) -->
-   <%= for image <- get_images() do %>
+  <div class="unselectable">
+    <h2>MEDIA</h2>
+    <!-- WARNING: These functions need to return lists (otherwise it's an error) -->
+    <%= for image <- get_images() do %>
       <!-- Invalid html because of custom full attribute -->
       <figure class="image-wrapper">
         <img id=<%=image.file%> class="img-thumbnail" type=<%=image.type%> full=<%= "/images/" <> image.file %> src=<%= "/images/" <> image.thumb %> alt="Problem">
       </figure>
-   <% end %>
+    <% end %>
 
-   <!-- Modal -->
-   <div id="imageModal" class="modal">
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
       <span class="close">&times;</span>
       <img class="modal-content" id="img01">
       <div id=caption></div>
-   </div>
+    </div>
 
-   <!-- Modal video -->
-   <div id="videoModal" class="modal">
+    <!-- Modal video -->
+    <div id="videoModal" class="modal">
       <span class="close">&times;</span>
       <video width=768 height=432 class="modal-content" id="vid01" controls>
-         <source id="vid01src" src="">
+        <source id="vid01src" src="">
       </video>
       <div id=caption></div>
-   </div>
+    </div>
 
 
-   <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-   <script>require("js/app").App.run()</script>
-   </div> <!-- unselectable -->
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script>require("js/app").App.run()</script>
+  </div> <!-- unselectable -->
 </div> <!-- jumbotron -->
-

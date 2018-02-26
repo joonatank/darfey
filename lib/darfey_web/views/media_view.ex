@@ -1,5 +1,5 @@
 defmodule MediaFile do
-   defstruct [:type, :file, :thumb]
+  defstruct [:type, :file, :thumb]
 end
 
 defmodule DarfeyWeb.MediaView do

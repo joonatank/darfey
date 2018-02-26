@@ -1,5 +1,5 @@
 defmodule DarfeyWeb.SqlView do
-   use DarfeyWeb, :view
-   import DarfeyWeb.Controllers.Helpers
+  use DarfeyWeb, :view
+  import DarfeyWeb.Controllers.Helpers
 
 end
