@@ -1,3 +1,5 @@
+create table quotes (id int, quote varchar(255), author varchar(255), primary key (id));
+
 insert into quotes values (0, 'I did not attend his funeral, but I sent a nice letter saying I approved of it.',  'Mark Twain');
 insert into quotes values (1, 'Some cause happiness wherever they go; others whenever they go', 'Oscar Wilde');
 insert into quotes values (2, 'I''ve had a perfectly wonderful evening, but this wasn''t it.', 'Groucho Marx');

@@ -20,9 +20,9 @@ defmodule DarfeyWeb.Router do
 
     get "/", PageController, :index
     get "/media", MediaController, :index
-    get "/blog", PageController, :blog
-    get "/contact", PageController, :contact
+    get "/blog", PostController, :index
     get "/sql", SqlController, :index
+    resources "/posts", PostController
   end
 
   # Other scopes may use custom stacks.
