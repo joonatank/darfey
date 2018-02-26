@@ -14,9 +14,9 @@
   <div>
    <header class="navbar">
        <a class="navlink" href="/">Home</a>
-       <a class="navlink" href="blog">Blog</a>
-       <a class="navlink" href="media">Media</a>
-       <a class="navlink" href="sql">SQL</a>
+       <a class="navlink" href="/blog">Blog</a>
+       <a class="navlink" href="/media">Media</a>
+       <a class="navlink" href="/sql">SQL</a>
    </header> <!-- navbar -->
    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
