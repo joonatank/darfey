@@ -5,7 +5,7 @@
     <%= for image <- get_images() do %>
       <!-- Invalid html because of custom full attribute -->
       <figure class="image-wrapper">
-        <img id=<%=image.file%> class="img-thumbnail" type=<%=image.type%> full=<%= "/images/" <> image.file %> src=<%= "/images/" <> image.thumb %> alt="Problem">
+        <img id=<%=image.file%> class="img-thumbnail" type=<%=image.type%> full=<%= "/images/media/" <> image.file %> src=<%= "/images/media/" <> image.thumb %> alt=<%= image.caption %> >
       </figure>
     <% end %>
 
