@@ -191,6 +191,7 @@ a.navlink:hover {
    overflow: auto; /* Enable scroll if needed */
    background-color: rgb(0,0,0); /* Fallback color */
    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+   overflow: hidden;
 
    /* No selecting, you can still paint it though... */
    /*
@@ -205,10 +206,11 @@ a.navlink:hover {
 
 /* Modal Content (Image) */
 .modal-content {
-   margin: auto;
-   display: block;
-   width: 80%;
-   /*max-width: 700px;*/
+   /* Use vh and vw to make size relative to the viewport, otherwise this doesn't work */
+   max-height: 85vh;
+   max-width: 90vw;
+   padding-top: 20px; /* Location of the box */
+   margin: 0 auto;
 
    user-drag: none;
    -webkit-user-drag: none;
