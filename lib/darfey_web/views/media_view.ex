@@ -3,19 +3,30 @@ defmodule MediaFile do
 end
 
 defmodule DarfeyWeb.MediaView do
+  @moduledoc """
+  MediaView module
+  """
+
   use DarfeyWeb, :view
   require Logger
 
-  # Recursive function for creating list of image assets
-  def get_image([t | thumbs]) do
-    # Remove the _thumb from the name and find a file with that name
-    # Finds any extension for the file
+  @doc """
+  Recursive function for creating list of image assets
+  @return List of MediaFiles
+
+  Tries to find a thumbnail file with {FILENAME}_thumb.{EXT}
+  where {FILENAME} is the orignal name, {EXT} is any extension (image)
+
+  If no thumbnail was found then
+  Assign the file as thumbnail
+  LOG: that the file doesn't have a thumbnail
+  """
+  def get_image([file | files]) do
+    # Find a thumb file
     # TODO
-    # Problem: If one thumb has multiple files with different extensions
-    # Problem: If thumb doesn't have an image
-    # Problem: If a file has non image/video extension
-    filename = String.replace_trailing(Path.rootname(t), "_thumb", "")
-    file = List.first(Path.wildcard(filename <> "*"))
+    # Problem: if a video file has no thumbs the html img tag will not work
+    thumb = List.first(Path.wildcard(Path.rootname(file) <> "_thumb*"))
+            || (Logger.warn "NO thumb #{inspect(file)}"; file)
 
     # Only supports mp4 videos
     # We need to create a list of supported video/image types and check against those
@@ -25,21 +36,26 @@ defmodule DarfeyWeb.MediaView do
       else
         "img"
       end
-    Logger.debug "file: #{inspect{Path.basename(file)}} Image type : #{inspect(type_)} thumbs: #{inspect(t)}"
-    [%MediaFile{type: type_, file: Path.basename(file), thumb: Path.basename(t), caption: "Problems"}] ++ get_image(thumbs)
+    Logger.debug "file: #{inspect{Path.basename(file)}} Image type : #{inspect(type_)} thumb: #{inspect(thumb)}"
+    [%MediaFile{type: type_, file: Path.basename(file), thumb: Path.basename(thumb), caption: "Problems"}] ++ get_image(files)
   end
   def get_image([]), do: []
 
-  # Get the images/videos from asset directory
-  # assumes that every image has a thumb file named: {filename}_thumb.{fileext}
-  # Extra thumbs or images are not a problem
-  # but only images that have image/thumb pair as above are displayed.
+  @doc """
+  Get the images/videos from asset/images/media directory
+  @return List of MediaFiles
+  """
   def get_images() do
     # Find all thumbs
     # Use get_image to find the orignal file
+    # TODO
+    # Problem: If the file has non image/video extension
     path = "assets/static/images/media/"
     thumbs = Path.wildcard(path <> "*_thumb*")
-    get_image(thumbs)
+    all = Path.wildcard(path <> "*")
+    originals = MapSet.difference(Enum.into(all, MapSet.new), Enum.into(thumbs, MapSet.new))
+                |> MapSet.to_list
+    get_image(originals)
   end
 
 end
