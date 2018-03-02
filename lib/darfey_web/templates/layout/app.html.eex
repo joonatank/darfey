@@ -13,10 +13,11 @@
 
   <div>
     <header class="navbar">
-      <a class="navlink" href="/">Home</a>
-      <a class="navlink" href="/blog">Blog</a>
-      <a class="navlink" href="/media">Media</a>
-      <a class="navlink" href="/sql">SQL</a>
+      <ul>
+        <li><a class="navlink" href="/blog">Blog</a></li>
+        <li><a class="navlink" href="/media">Media</a></li>
+        <li><a class="navlink" href="/sql">SQL</a></li>
+      </ul>
     </header> <!-- navbar -->
     <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
     <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
@@ -31,8 +32,6 @@
       <a class="navlink" href="mailto:joonatan.kuosa@gmail.com">joonatan.kuosa@gmail.com</a>
       <a class="navlink" target="_blank" href="http://github.com/joonatank">GitHub</a>
       <!-- TODO replace these two with FB, LinkedIn links -->
-      <a class="navlink" rel="nofollow" target="_blank" href="https://hexdocs.pm/phoenix">Docs</a>
-      <a class="navlink" rel="nofollow" target="_blank" href="https://github.com/phoenixframework/phoenix">Source</a>
       <a class="power" rel="nofollow" target="_blank" href="https://elixir-lang.org/">and Elixir</a>
       <a class="power" rel="nofollow" target="_blank" href="http://phoenixframework.org/">Powered by Phoenix</a>
     </header> <!-- contactbar -->

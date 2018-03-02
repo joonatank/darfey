@@ -123,6 +123,16 @@ p.author {
    top: 0; /* Position the navbar at the top of the page */
 }
 
+/* Can't center this shit, CSS too hard. Leaving it on the left. */
+.navbar ul {
+    top: 0;
+    /* This changes the behaviour to same as it is without a list */
+    list-style-type: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
 .contactbar {
    bottom: 0;
 }
@@ -140,8 +150,8 @@ a.navlink {
 
 
 a.power {
-   float: right;
-   color: red;
+    float: right;
+    color: red;
     padding: 14px 2px;
 }
 

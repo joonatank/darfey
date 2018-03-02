@@ -18,7 +18,7 @@ defmodule DarfeyWeb.Router do
   scope "/", DarfeyWeb do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", PostController, :index
     get "/media", MediaController, :index
     get "/blog", PostController, :index
     get "/sql", SqlController, :index
