@@ -1,6 +1,10 @@
-<h2>New post</h2>
+<div class="blog">
+  <h2>New post</h2>
 
-<%= render "form.html", changeset: @changeset,
-                        action: post_path(@conn, :create) %>
+  <%= render "form.html", changeset: @changeset,
+                          action: post_path(@conn, :create) %>
 
-<span><%= link "Back", to: post_path(@conn, :index) %></span>
+  <!-- TODO back link needs a confirmation if the user has added something
+  -->
+  <span><%= link "Back", to: post_path(@conn, :author_index), class: "btn btn-default" %></span>
+</div>

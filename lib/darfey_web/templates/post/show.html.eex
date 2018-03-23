@@ -1,15 +1,9 @@
 <div class="blog">
-  <h2>Show post</h2>
-
-  <h3>
+  <h1>
     <%= @post.title %>
-  </h3>
+  </h1>
 
-  <p>
-    <strong>Body:</strong><br>
-    <%= raw(@post.body) %>
-  </p>
+  <%= markdown(@post.body) %>
 
-  <span><%= link "Edit", to: post_path(@conn, :edit, @post) %></span>
-  <span><%= link "Back", to: post_path(@conn, :index) %></span>
-</div>  <!-- jumbotron -->
+  <span><%= link "Back", to: post_path(@conn, :index), class: "btn" %></span>
+</div>  <!-- blog -->

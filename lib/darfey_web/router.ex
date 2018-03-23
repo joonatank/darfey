@@ -21,6 +21,8 @@ defmodule DarfeyWeb.Router do
     get "/", PostController, :index
     get "/media", MediaController, :index
     get "/blog", PostController, :index
+    # For testing the author_index without authentication
+    get "/auth", PostController, :author_index
     get "/sql", SqlController, :index
     resources "/posts", PostController
   end

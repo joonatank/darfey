@@ -7,13 +7,13 @@
 
   <div class="form-group">
     <%= label f, :title, class: "control-label" %>
-    <%= text_input f, :title, class: "form-control" %>
+    <%= text_input f, :title, class: "post-title-control" %>
     <%= error_tag f, :title %>
   </div>
 
   <div class="form-group">
     <%= label f, :body, class: "control-label" %>
-    <%= textarea f, :body, class: "form-control" %>
+    <%= textarea f, :body, class: "post-body-control" %>
     <%= error_tag f, :body %>
   </div>
 

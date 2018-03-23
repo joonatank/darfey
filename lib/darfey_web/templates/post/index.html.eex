@@ -1,35 +1,15 @@
 <div class="jumbotron">
-<h2>Listing posts</h2>
 
-<table class="table">
-  <p>Daily random quote:</p>
+  <br>
   <%= for quote <- get_random_quote() do %>
     <p class="quote"><%= quote.quote %></p>
     <p class="author"><%= quote.author%></p>
   <% end %>
-  <thead>
-    <tr>
-      <th>Title</th>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for post <- @posts do %>
-    <tr>
-      <td>
-        <span><%= link post.title, to: post_path(@conn, :show, post) %></span>
-      </td>
+  <%= for post <- @posts do %>
+    <div>
+      <span><%= link post.title, to: post_path(@conn, :show, post), class: "blog-post-thumb" %></span>
+    </div>
+  <% end %>
 
-      <td class="text-right">
-        <span><%= link "Show", to: post_path(@conn, :show, post), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: post_path(@conn, :edit, post), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<span><%= link "New post", to: post_path(@conn, :new) %></span>
 </div>

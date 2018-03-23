@@ -23,15 +23,70 @@ th, td {
 }
 
 .blog {
-   text-align: left;
-   padding-top : 20px;
+   text-align: center;
+   padding-top : 40px;
    padding-left: 20px;
+
 }
 
 .blog h2 {
    text-align: left;
    color: green;
    padding-left: 50px;
+}
+
+/* Links are similar to buttons here */
+.blog a {
+}
+
+/* Style the buttons */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 6px 10px;
+  margin: 0px 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-xs {
+  float: right;
+}
+
+.blog-post-thumb {
+  background-color: red;
+  line-height: 50px;
+  color: white;
+  /* padding creates a nice color border around the text */
+  padding: 12px 20px;
+  /* border doesn't work */
+    border: 2px solid black;
+    border-collapse: collapse;
+    font-size: 20px;
+    /* radius make's it round */
+    border-radius: 12px;
+  cursor: pointer;
+}
+
+.form-group {
+    width: 50%;
+    max-width: 400px;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+.control-label {
+    font-size: 24px;
+}
+
+.post-title-control {
+    width: 100%;
+}
+
+.post-body-control {
+    width: 100%;
+    min-height: 200px;
 }
 
 .media {

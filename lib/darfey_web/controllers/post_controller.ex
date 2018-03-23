@@ -9,6 +9,10 @@ defmodule DarfeyWeb.PostController do
     render(conn, "index.html", posts: posts)
   end
 
+  def author_index(conn, _params) do
+    posts = Repo.all(Post)
+    render(conn, "author_index.html", posts: posts)
+  end
   def new(conn, _params) do
     changeset = Post.changeset(%Post{})
     render(conn, "new.html", changeset: changeset)
