@@ -1,0 +1,68 @@
+I'm gonna need to start using Github issues
+
+Issues with Darfey
+
+- Clicking Blog link when in a post (posts/3) links to posts/blog instead of posts
+- Actually all links link to post/*
+FIXED
+
+- Media page
+    - Images/Videos need to take 255 space always
+    - Add padding to the side
+FIXED
+
+- Image modal viewer: scale to fit screen
+DONE
+
+- Blog: Remove listing the text body in the SQL table
+DONE
+
+- Blog: Test by adding a few copy-paste posts
+
+- Blog: Add timestamp
+
+- Blog: Add author
+
+- Add Users (authors)
+    - Add user support for creating/editing a blog post
+    - Only one user for now (us)
+Not needed yet. We can just remove posting for now and manually add them to the SQL tables using psql. Add a command-line updater later that reads a html page and adds it to the blog.
+Actually we can do this all without users if we restrict the updates to localhost for now.
+
+- Media: Add an SQL table for these so we can add captions and so on
+    - could just use Instagram instead?
+
+- Media: fix the thumbs not matching
+    - need to do name matching instead of using two lists so we don't
+    accidentially use wrong thumbs
+DONE
+
+- Media: Find images instead of thumbs
+    - find thumb based on image name
+    - Log images without thumbs (and display them in full size)
+DONE
+
+- Home: Remove (not needed)
+DONE
+
+- Tests: Add SQL database initialisation and destruction
+
+- Add copyright notice in the footer
+
+- SQL: add Ecto modules instead of raw queries
+
+- Modals: Disable scrolling when modal window is shown
+https://stackoverflow.com/questions/4770025/how-to-disable-scrolling-temporarily
+    - the CSS version by adding stop-scrolling to div/body
+
+- Modals: Arrow keys to move to next/prev image
+    - this doesn't really make sense or work for videos since scrolling the video would be a better idea.
+
+- Modals: When the browser is very wide and short scales the image to fit width messing the aspect ratio.
+
+Code Snippet
+    # Interesting snippet for comparing lists
+    path = "assets/static/images/media/"
+    thumbs = Path.wildcard(path <> "*_thumb*")
+    all = Path.wildcard(path <> "*")
+    originals = MapSet.difference(Enum.into(all, MapSet.new), Enum.into(thumbs, MapSet.new)) |> MapSet.to_list

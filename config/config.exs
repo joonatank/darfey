@@ -9,6 +9,10 @@ use Mix.Config
 config :darfey,
   ecto_repos: [Darfey.Repo]
 
+config :darfey, Darfey.Auth.Guardian,
+  issuer: "darfey",
+  secret_key: "WKhA8BKJXMdaAHkywBtj06osRHgSISnQlU5JSXclpD/CzAbF3Xlpti+/gaNI81L4"
+
 # Configures the endpoint
 config :darfey, DarfeyWeb.Endpoint,
   url: [host: "localhost"],
